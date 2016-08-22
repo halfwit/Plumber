@@ -12,16 +12,16 @@ struct memory_struct {
 };
 
 static size_t ctcurl_ss(char *in) {
-  size_t i;
-  for (i = 0; i < strlen(in) - 13; i++) {
-    if((isalpha(in[i]) &&
-      (in[i] == 'C' || in[i] == 'c')) &&
-      in[i+1] == 'o' && in[i+2] == 'n' &&
-      (in[i+8] == 'T' || in[i+8] == 't') &&
-      in[i+9] == 'y' && in[i+10] == 'p')
-      return i + 12;
+
+  int i;
+
+  for (i = 0; in[i]; i++) {
+    in[i] = tolower(in[i]);
   }
-  return 10;
+
+  char *r = strstr(in, "content-type");
+  return r - in;
+
 }
 
 static size_t wm_callback(void *contents, size_t size, size_t nmemb, void *userp) {
