@@ -11,7 +11,7 @@ struct memory_struct {
   size_t  size;
 };
 
-static size_t ctcurl_ss(char *in) {
+static size_t ct_strstr(char *in) {
 
   int i;
 
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
     int start = 0, mid = 0, end = 0;
     // Use sentinels to grep out '/', then go back and forth to find endpoints, finally printing the range to stdout.
     size_t i;
-    for (i = ctcurl_ss(chunk.memory); i < chunk.size; i++) {
+    for (i = ct_strstr(chunk.memory); i < chunk.size; i++) {
       if (chunk.memory[i] == '/') {
         mid = i;
         break;
