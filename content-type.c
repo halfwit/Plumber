@@ -65,6 +65,7 @@ int main(int argc, char *argv[])
   curl_easy_setopt(hnd, CURLOPT_HEADER, 1L);
   curl_easy_setopt(hnd, CURLOPT_USERAGENT, "curl/7.50.1");
   curl_easy_setopt(hnd, CURLOPT_MAXREDIRS, 5L);
+  curl_easy_setopt(hnd, CURLOPT_FOLLOWLOCATION, 1L);
   curl_easy_setopt(hnd, CURLOPT_FILETIME, 1L);
   curl_easy_setopt(hnd, CURLOPT_TCP_KEEPALIVE, 1L);
 
