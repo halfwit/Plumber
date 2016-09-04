@@ -84,14 +84,14 @@ int main(int argc, char *argv[])
     }
 
     for (i = mid + 1; i < chunk.size; i++) {
-      if (!isalpha(chunk.memory[i]) && chunk.memory[i] != '-') {
+      if (!isalnum(chunk.memory[i]) && chunk.memory[i] != '-') {
         end = i;
         break;
       }
     }
   
     for (i = mid - 1; i > 0; i--) {
-      if (!isalpha(chunk.memory[i]) && chunk.memory[i] != '-') {
+      if (!isalnum(chunk.memory[i]) && chunk.memory[i] != '-') {
         start = ++i; 
         break;
       }
