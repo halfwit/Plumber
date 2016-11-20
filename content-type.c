@@ -25,7 +25,7 @@ static size_t ct_strstr(char *in) {
 }
 
 static size_t wm_callback(void *contents, size_t size, size_t nmemb, void *userp) {
- 
+
   size_t realsize = size * nmemb;
   struct memory_struct *mem = (struct memory_struct *)userp;
   mem->memory = realloc(mem->memory, mem->size + realsize + 1);
@@ -46,20 +46,21 @@ int main(int argc, char *argv[])
   if (argc != 2) {
     fprintf(stderr, "Usage: %s <url>\n", argv[0]);
   }
-  
+
   CURLcode ret;
   CURL *hnd;
 
   struct memory_struct chunk;
-  
+
   chunk.memory = malloc(1);
   chunk.size = 0;
 
   hnd = curl_easy_init();
-  
+
   curl_easy_setopt(hnd, CURLOPT_URL, argv[1]);
   curl_easy_setopt(hnd, CURLOPT_WRITEFUNCTION, wm_callback);
   curl_easy_setopt(hnd, CURLOPT_WRITEDATA, (void *)&chunk);
+  curl_easy_setopt(hnd, CURLOPT_FAILONERROR, 1L);
   curl_easy_setopt(hnd, CURLOPT_NOPROGRESS, 1L);
   curl_easy_setopt(hnd, CURLOPT_NOBODY, 1L);
   curl_easy_setopt(hnd, CURLOPT_HEADER, 1L);
@@ -90,14 +91,14 @@ int main(int argc, char *argv[])
         break;
       }
     }
-  
+
     for (i = mid - 1; i > 0; i--) {
       if (!isalnum(chunk.memory[i]) && chunk.memory[i] != '-') {
-        start = ++i; 
+        start = ++i;
         break;
       }
     }
-    
+
     printf("%.*s\n", end - start, &chunk.memory[start]);
   }
 
