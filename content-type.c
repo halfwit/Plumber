@@ -7,7 +7,7 @@
 #include <curl/curl.h>
 
 enum {
-	TIMEOUT_MS  = 2500,
+	TIMEOUT_MS  = 5000,
 	MAX_REDIRS  = 5L
 };
 
