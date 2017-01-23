@@ -8,7 +8,7 @@
 
 enum {
 	TIMEOUT_MS  = 5000,
-	MAX_REDIRS  = 5L
+	MAX_REDIRS  = 50L
 };
 
 struct memory_struct {
@@ -74,13 +74,13 @@ main(int argc, char *argv[])
 	curl_easy_setopt(hnd, CURLOPT_WRITEDATA, (void *)&chunk);
 	curl_easy_setopt(hnd, CURLOPT_SSL_VERIFYPEER, 0L);
 	curl_easy_setopt(hnd, CURLOPT_SSL_VERIFYHOST, 0L);
-	curl_easy_setopt(hnd, CURLOPT_FAILONERROR, 1L);
 	curl_easy_setopt(hnd, CURLOPT_NOPROGRESS, 1L);
 	curl_easy_setopt(hnd, CURLOPT_TIMEOUT_MS, TIMEOUT_MS);
 	curl_easy_setopt(hnd, CURLOPT_NOBODY, 1L);
 	curl_easy_setopt(hnd, CURLOPT_HEADER, 1L);
-	curl_easy_setopt(hnd, CURLOPT_USERAGENT, "curl/7.50.1");
-	curl_easy_setopt(hnd, CURLOPT_MAXREDIRS, 5L);
+	curl_easy_setopt(hnd, CURLOPT_USERAGENT, "curl/7.52.1");
+	curl_easy_setopt(hnd, CURLOPT_MAXREDIRS, MAX_REDIRS);
+	curl_easy_setopt(hnd, CURLOPT_HTTP_VERSION, (long)CURL_HTTP_VERSION_2TLS);
 	curl_easy_setopt(hnd, CURLOPT_FOLLOWLOCATION, 1L);
 	curl_easy_setopt(hnd, CURLOPT_FILETIME, 1L);
 	curl_easy_setopt(hnd, CURLOPT_TCP_KEEPALIVE, 1L);
