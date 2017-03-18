@@ -3,11 +3,17 @@
 
 PREFIX ?= /usr/local
 
+SRC = \
+	plumber \
+	browse \
+	edit \
+	play \
+
 install:
 	@mkdir -p ${DESTDIR}${PREFIX}/bin
-	@cp -f notes ${DESTDIR}${PREFIX}/bin
-	@chmod 755 ${DESTDIR}${PREFIX}/bin/notes
-	@mkdir -p ${DESTDIR}${PREFIX}/share/notes
-	@cp -f new ${DESTDIR}${PREFIX}/share/notes/new
+	@cp -f ${SRC} ${DESTDIR}${PREFIX}/bin
+	@chmod 755 ${DESTDIR}${PREFIX}/bin/${SRC}
+	@mkdir -p ${DESTDIR}${PREFIX}/etc/plumber
+	@cp -f cfg/plumber/* ${DESTDIR}${PREFIX}/etc/plumber/
 
 .PHONY: install

@@ -4,4 +4,4 @@
 lsgrp 2 | xargs mapw -u &>/dev/null
 
 ## main
-exec surf "$@" &>/dev/null
+exec vimb "$@" &>/dev/null

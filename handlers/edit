@@ -1,4 +1,0 @@
-#!/bin/sh
-
-EDIT=vis
-exec st "$EDIT" "$@"

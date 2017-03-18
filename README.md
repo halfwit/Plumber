@@ -2,16 +2,19 @@
 =========
 
 Scripts and binaries to action on arbitrary strings, including URLs.
-This tool uses content-type, a simple binary to fetch a decent analogue of a mime type for a given link.
+This tool uses [content-type](https://github.com/halfwit/content-type), a simple binary to fetch a decent analogue of a mime type for a given link.
 
 ##Configuration
 ---------------
 
+You can copy the included configurations of PREFIX/etc/plumber, or provide your own behavior
+Modify PREFIX/share/plumber/edit, play, etc to meet your needs. This is suboptimal, and will be changed in the future
+(It's likely that in the future, this will lean on XDG\_DATA\_HOME)
+
 ##Installation
 --------------
 
-This script comes with several files that you will have to modify to match your system. These will be installed into your $XDG_DATA_HOME/plumber directory. 
-It also integrates with https://github.com/halfwit/dsearch for handling both manpage entries missed plumbs.
+PREFIX=myprefix make install
 
 ##Examples
 ----------
