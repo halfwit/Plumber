@@ -1,4 +1,5 @@
 #!/bin/sh
 
 EDITOR=vis
-exec $TERMINAL "$EDITOR" "$@"
+#TODO: Research how portable -t is
+exec $TERMINAL -t edit "$EDITOR" "$@"
