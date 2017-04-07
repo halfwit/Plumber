@@ -2,4 +2,4 @@
 
 EDITOR=vis
 #TODO: Research how portable -t is
-exec $TERMINAL -t edit "$EDITOR" "$@"
+exec $TERMINAL -c edit "$EDITOR" "$@"
