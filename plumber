@@ -1,5 +1,5 @@
 #!/bin/sh
-PLDIR="$XDG_DATA_HOME/plumber"
+PLDIR=/usr/local/etc/plumber"
 
 # Load up the clipboard
 clip() {
