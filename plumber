@@ -1,5 +1,5 @@
 #!/bin/sh
-PLDIR=/usr/local/etc/plumber"
+PLDIR=/usr/local/etc/plumber
 
 # Load up the clipboard
 clip() {
