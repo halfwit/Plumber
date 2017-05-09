@@ -4,7 +4,7 @@
 Scripts and binaries to action on arbitrary strings, including URLs.
 This tool uses [content-type](https://github.com/halfwit/content-type), a simple binary to fetch a decent analogue of a mime type for a given link.
 
-##Configuration
+## Configuration
 ---------------
 
 You can copy the included configurations of cfg/plumber, or provide your own behavior
@@ -13,22 +13,22 @@ Modify edit, play, etc to meet your needs. This is suboptimal, and will be chang
 
 The script will source a file at $XDG_CONFIG_HOME/plumber/special, which should be a runnable script that will `exit 1` if a match is found (this is used for special cases, like youtube)
 
-##Installation
+## Installation
 --------------
 
 PREFIX=myprefix make install
 
-##Examples
+## Examples
 ----------
 
-###edit
+### edit
 ```sh
 #!/bin/sh
 EDIT=vis
 st "$EDIT" "$@"
 ```
 
-###play
+### play
 ```sh
 #!/bin/sh
 # Open or append to playlist
@@ -39,28 +39,28 @@ else
 fi
 ```
 
-###browse
+### browse
 ```sh
 #!/bin/sh
 
 exec surf "$@"
 ```
 
-###docs
+### docs
 ```sh
 #!/bin/sh
 
 exec zathura "$@"
 ```
 
-###listen
+### listen
 ```sh
 #!/bin/sh
 
 exec mpv "$@"
 ```
 
-###special
+### special
 ```sh
 #!/bin/sh
 
