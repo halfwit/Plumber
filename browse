@@ -5,5 +5,3 @@ lsgrp 2 | xargs mapw -u &>/dev/null
 
 ## main
 vimb "$@" &>/dev/null &
-sleep 0.5
-wrs 800 500 "$(lsw | tail -n 1)"
