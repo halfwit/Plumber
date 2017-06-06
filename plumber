@@ -38,9 +38,9 @@ handle() {
 			hear)   mpv 		      "$1" &
 					clip "$1"
 					exit 0 ;;
-			man)    "$XDG_DATA_HOME"/dsearch/man "$1" &
+			man)    /usr/local/share/dsearch/man "$1" &
 					exit 0 ;;
-			godoc)  "$XDG_DATA_HOME"/dsearch/godoc "$1" &
+			godoc)  /usr/local/share/dsearch/godoc "$1" &
 					exit 0 ;;
 			search) dsearch "!g $1" &
 					exit 0 ;;
