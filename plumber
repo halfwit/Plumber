@@ -46,6 +46,8 @@ handle() {
 					exit 0 ;;
 			wiki)   dsearch "!w $1" &
 					exit 0 ;;
+			todo)   printf '%s\n' "$1" | todo &
+					exit 0 ;;
 		esac
 	done
 	printf "$input $1" > ~/mime_issues
@@ -58,7 +60,7 @@ check_manpage() {
 }
 
 menu() {
-	printf '%s\n' "search" "wiki" "man" "godoc" "stream" | dmenu -l 5 -p "Query: $1"
+	printf '%s\n' "search" "wiki" "man" "godoc" "todo" "stream" | dmenu -l 6 -p "Query: $1"
 }
 
 # In testing, this outputs a correct mime
@@ -78,6 +80,7 @@ parse() {
 			wiki)   printf "wiki\n"   ;;
 			man)    printf "man\n"    ;;
 			stream) printf "hear\n"   ;;
+			todo) 	printf "todo\n"   ;;
 		esac
 	done
 }
