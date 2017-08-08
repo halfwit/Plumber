@@ -2,6 +2,7 @@ application/octet-stream edit
 application/xml edit
 application/vnd.djvu edit
 application/pdf docs
+application/ogg play
 application/epubzip docs
 application/binary browse
 application/json browse
