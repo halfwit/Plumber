@@ -1,9 +1,19 @@
 #!/bin/sh
-# Script to open Vimb instances in tabbed
+# Script to open websites in a preferred browser
 
 lsgrp 2 | xargs mapw -u &>/dev/null
 
+run_chrome() {
+	chromium --kiosk --user-data-dir=/home/halfwit/local/cfg/chromium --window-size=800,600 "$@" &>/dev/null
+}
+
 ## main
-vimb "$@" &>/dev/null &
-wait 2
+case "$@" in
+	*google*) run_chrome "$@" & ;;
+	*youtube*) run_chrome "$@" & ;;
+	*twitch*) run_chrome "$@" & ;;
+	*discord*) run_chrome "$@" & ;;
+	*) vimb "$@" &>/dev/null & ;;
+esac
+wait 3
 lsgrp 2 | tail -n 1 | xe -s 'wtf $1'
