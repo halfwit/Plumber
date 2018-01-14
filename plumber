@@ -97,4 +97,5 @@ if test -f "$XDG_CONFIG_HOME/plumber/special"; then
 fi
 
 # Ugly! Will write something to read from stdin and err on no values.
+# This will check stdin for content, if none exists it will run the menu
 mime "$input" | (grep . || menu "$input") | parse | handle "$input"
