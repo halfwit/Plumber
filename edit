@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# Example of editor wrapping script
 EDITOR=vis
 #TODO: Research how portable -t is
 exec $TERMINAL -c edit "$EDITOR" "$@"

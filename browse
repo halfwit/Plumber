@@ -1,6 +1,7 @@
 #!/bin/sh
-# Script to open websites in a preferred browser
+# Example script to open websites in a preferred browser
 
+# This is for my window manager
 lsgrp 2 | xargs mapw -u &>/dev/null
 
 run_chrome() {

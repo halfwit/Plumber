@@ -1,6 +1,8 @@
 #!/bin/sh
 PLDIR=/usr/local/etc/plumber
 
+# TODO: Break out anything personal
+
 # Load up the clipboard
 clip() {
 	printf '%s\n' "$1" | xcmenu -ic

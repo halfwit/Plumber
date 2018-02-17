@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# Example of script to wrap media playback. This particular one will append to mpv, using a socket
 if ! pgrep mpv; then
 	mpv --input-ipc-server=/tmp/mpvsocket --keepaspect-window "$1" --no-input-default-bindings &
 else
