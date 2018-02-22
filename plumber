@@ -33,7 +33,9 @@ handle() {
 					exit 0 ;;
 			view)   imv		"`fetch "$1"`" &
 					exit 0 ;;
-			docs)   zathura "`fetch "$1"`" &
+			docs)   link="$(fetch "$1")"
+					mv "$link" "$link.pdf"
+					zathura "$link.pdf" &
 					exit 0 ;;
 			edit)   edit    "`fetch "$1"`" &
 					exit 0 ;;
