@@ -16,5 +16,6 @@ case "$@" in
 	*discord*) run_chrome "$@" & ;;
 	*) vimb "$@" &>/dev/null & ;;
 esac
-wait 3
-lsgrp 2 | tail -n 1 | xe -s 'wtf $1'
+
+sleep 4
+wtf "$(lsgrp 2 | tail -n 1)"
