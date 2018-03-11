@@ -14,8 +14,5 @@ case "$@" in
 	*youtube*) run_chrome "$@" & ;;
 	*twitch*) run_chrome "$@" & ;;
 	*discord*) run_chrome "$@" & ;;
-	*) vimb "$@" &>/dev/null & ;;
+	*) luakit "$@" &>/dev/null & ;;
 esac
-
-sleep 4
-wtf "$(lsgrp 2 | tail -n 1)"
