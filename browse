@@ -8,11 +8,20 @@ run_chrome() {
 	chromium --kiosk --user-data-dir=/home/halfwit/local/cfg/chromium --window-size=800,600 "$@" &>/dev/null
 }
 
+run_youtube() {
+	if pgrep idiotbox; then
+		st -c w3m -e w3m http://127.0.0.1:8080
+	else
+		run_chrome "$@" &
+	fi
+}
+
 ## main
 case "$@" in
 	*google*) run_chrome "$@" & ;;
-	*youtube*) run_chrome "$@" & ;;
+	*youtube*) run_youtube "$@" & ;;
 	*twitch*) run_chrome "$@" & ;;
 	*discord*) run_chrome "$@" & ;;
 	*) luakit "$@" &>/dev/null & ;;
+	
 esac
