@@ -1,4 +1,5 @@
 audio/x-mpegurl hear
+audio/x-ms-wma play
 audio/mpeg hear
 audio/ogg hear
 audio/x-scpls play
