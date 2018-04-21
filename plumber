@@ -1,11 +1,13 @@
 #!/bin/sh
+
+# Modify this to suit your environment
 PLDIR=/usr/local/etc/plumber
 
 # TODO: Break out anything personal
 
 # Load up the clipboard
 clip() {
-	printf '%s\n' "$1" | xcmenu -ic
+	printf '%s\n' "$1" | xclip -in -selection primary
 }
 
 # Workaround until we have a filesystem based browser
