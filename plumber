@@ -7,7 +7,7 @@ PLDIR=/usr/local/etc/plumber
 
 # Load up the clipboard
 clip() {
-	printf '%s\n' "$1" | xclip -in -selection primary
+	printf '%s\n' "$1" | xcmenu -ic
 }
 
 # Workaround until we have a filesystem based browser
