@@ -21,6 +21,8 @@ case "$@" in
 	*google*) run_chrome "$@" & ;;
 	*youtube*) run_youtube "$@" & ;;
 	*twitch*) run_chrome "$@" & ;;
+	*t.co*) run_chrome "$@" & ;;
+	*twitter*) run_chrome "$@" & ;;
 	*discord*) run_chrome "$@" & ;;
 	*) luakit "$@" &>/dev/null & ;;
 	
