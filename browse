@@ -5,7 +5,7 @@
 lsgrp 2 | xargs mapw -u &>/dev/null
 
 run_chrome() {
-	chromium --kiosk --user-data-dir=/home/halfwit/local/cfg/chromium --window-size=800,600 "$@" &>/dev/null
+	chromium --kiosk --user-data-dir=/home/halfwit/local/cfg/chromium --window-size=800,600 --app="$@' &>/dev/null
 }
 
 run_youtube() {
