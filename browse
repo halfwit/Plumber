@@ -4,10 +4,6 @@
 # This is for my window manager
 lsgrp 2 | xargs mapw -u &>/dev/null
 
-run_chrome() {
-	chromium --kiosk --user-data-dir=/home/halfwit/local/cfg/chromium --window-size=800,600 --app="$@" &>/dev/null
-}
-
 run_youtube() {
 	if pgrep idiotbox; then
 		st -c w3m -e w3m http://127.0.0.1:8080
@@ -18,12 +14,12 @@ run_youtube() {
 
 ## main
 case "$@" in
-	*google*) run_chrome "$@" & ;;
+	*google*) chromium "$@" & ;;
 	*youtube*) run_youtube "$@" & ;;
-	*twitch*) run_chrome "$@" & ;;
-	*t.co*) run_chrome "$@" & ;;
-	*twitter*) run_chrome "$@" & ;;
-	*discord*) run_chrome "$@" & ;;
+	*twitch*) chromium "$@" & ;;
+	*t.co*) chromium "$@" & ;;
+	*twitter*) chromium "$@" & ;;
+	*discord*) chromium "$@" & ;;
 	*) luakit "$@" &>/dev/null & ;;
 	
 esac
