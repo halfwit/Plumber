@@ -15,6 +15,7 @@ run_youtube() {
 ## main
 case "$@" in
 	*google*) chromium "$@" & ;;
+	*photos.app.goo.gl*) chromium "$@" & ;;
 	*youtube*) run_youtube "$@" & ;;
 	*twitch*) chromium "$@" & ;;
 	*t.co*) chromium "$@" & ;;
