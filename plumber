@@ -33,7 +33,7 @@ handle() {
 					exit 0 ;;
 			play)   play   	"`fetch "$1"`" &
 					exit 0 ;;
-			view)   imv		"`fetch "$1"`" &
+			view)   sxiv	"`fetch "$1"`" &
 					exit 0 ;;
 			docs)   link="$(fetch "$1")"
 					mv "$link" "$link.pdf"
