@@ -8,19 +8,19 @@ run_youtube() {
 	if pgrep idiotbox; then
 		st -c w3m -e w3m http://127.0.0.1:8080
 	else
-		run_chrome "$@" &
+		chromium "$@" &
 	fi
 }
 
 ## main
 case "$@" in
 	*google*) chromium "$@" & ;;
-	*photos.app.goo.gl*) chromium "$@" & ;;
+	*photos*) chromium "$@" & ;;
 	*youtube*) run_youtube "$@" & ;;
 	*twitch*) chromium "$@" & ;;
 	*t.co*) chromium "$@" & ;;
 	*twitter*) chromium "$@" & ;;
 	*discord*) chromium "$@" & ;;
-	*) luakit "$@" &>/dev/null & ;;
-	
+	*) luakit "$@" &>/dev/null & ;;	
 esac
+exit 0
