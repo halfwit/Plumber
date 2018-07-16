@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh --
 
 # Modify this to suit your environment
 PLDIR=/usr/local/etc/plumber
